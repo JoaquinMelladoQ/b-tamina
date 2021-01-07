@@ -1,24 +1,5 @@
-# README
+# B-Tamina App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
++ Rvm gemset use rails524: Ruby 2.5.3 - Rails 5.2.4.4
++ Use this repo: git clone "http..." "your workspace"
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
