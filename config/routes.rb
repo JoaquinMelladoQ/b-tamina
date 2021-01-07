@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'breweries/index'
   root 'home#index'
   devise_for :breweries, controllers: { registrations: 'breweries/registrations' }
   devise_for :clients, controllers: { registrations: 'clients/registrations'}
