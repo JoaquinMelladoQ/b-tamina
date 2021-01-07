@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'deals/new'
+  resources :bagasses, only: [:new, :create]
   root 'home#index'
   devise_for :breweries, controllers: { registrations: 'breweries/registrations' }
   devise_for :clients, controllers: { registrations: 'clients/registrations'}

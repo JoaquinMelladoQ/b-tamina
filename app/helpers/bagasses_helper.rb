@@ -1,0 +1,2 @@
+module BagassesHelper
+end
