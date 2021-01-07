@@ -1,0 +1,22 @@
+<h1>Deals#index</h1>
+<p>Find me in app/views/deals/index.html.erb</p>
+
+<h2>Make your deal!</h2>
+
+<%= form_with(model: @deal, local: true) do |ff| %>
+    <div class="field">
+        <%= ff.label :deal_quantity, 'Enter Amount to Withdraw' %><br />
+        <%= ff.text_field :deal_quantity, autofocus: true %>
+    </div>
+
+    <div class="field">
+        <%= ff.label :deal_date, 'Enter Date of Withdrawal' %><br />
+        <%= ff.text_field :deal_date %>
+    </div>
+
+    <div class="actions">
+        <%= ff.submit "Confirm" %>
+    </div>
+<% end %>
+
+
