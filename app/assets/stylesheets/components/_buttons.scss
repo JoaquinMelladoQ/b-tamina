@@ -1,14 +1,17 @@
 .btn {
     background-color: transparent;
     border: none;
-    color: white;
+    color: rgb(210, 193, 193);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
     padding: 7px 10px 7px 10px;
 
     transition: color .3s ease;
 
     &:focus {
         outline: none;
+    }
+    &:hover {
+        color: darken($color: rgb(182, 141, 141), $amount: 30);
     }
 }
