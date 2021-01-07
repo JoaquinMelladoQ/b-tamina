@@ -1,0 +1,14 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 7px 10px 7px 10px;
+
+    transition: color .3s ease;
+
+    &:focus {
+        outline: none;
+    }
+}
