@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  production_date: 2021-01-07
+  brewery: one
+
+two:
+  quantity: 1
+  production_date: 2021-01-07
+  brewery: two

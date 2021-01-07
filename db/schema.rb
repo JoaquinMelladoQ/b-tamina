@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_132917) do
+ActiveRecord::Schema.define(version: 2021_01_07_133504) do
+
+  create_table "bagasses", force: :cascade do |t|
+    t.integer "quantity"
+    t.date "production_date"
+    t.integer "brewery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brewery_id"], name: "index_bagasses_on_brewery_id"
+  end
 
   create_table "breweries", force: :cascade do |t|
     t.string "email", default: "", null: false
