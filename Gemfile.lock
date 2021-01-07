@@ -47,12 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-<<<<<<< HEAD
-    autoprefixer-rails (10.2.0.0)
-      execjs
-=======
     bcrypt (3.1.16)
->>>>>>> dc19f2e143dc7d791d885d44895a20561cfb8053
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -120,11 +115,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-<<<<<<< HEAD
-    popper_js (1.16.0)
-=======
     orm_adapter (0.5.0)
->>>>>>> dc19f2e143dc7d791d885d44895a20561cfb8053
     public_suffix (4.0.6)
     puma (3.12.6)
     racc (1.5.2)
