@@ -11,7 +11,4 @@
     &:focus {
         outline: none;
     }
-    &:hover {
-        color: darken($color: rgb(182, 141, 141), $amount: 30);
-    }
 }
