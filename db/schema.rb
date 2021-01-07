@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_132525) do
+ActiveRecord::Schema.define(version: 2021_01_07_132917) do
 
   create_table "breweries", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2021_01_07_132525) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.date "deal_date"
+    t.integer "deal_quantity"
+    t.boolean "confirmation"
+    t.integer "brewery_id"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brewery_id"], name: "index_deals_on_brewery_id"
+    t.index ["client_id"], name: "index_deals_on_client_id"
   end
 
 end
