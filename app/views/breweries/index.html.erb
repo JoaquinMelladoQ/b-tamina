@@ -3,4 +3,15 @@
     <p>Find me in app/views/breweries/index.html.erb</p>
 
     <h1>Para el cliente</h1>
+    <% @breweries.each do |brewery| %>
+        <ul>
+            <li>
+                <%= brewery.name %>
+                <%= link_to "New Deal", new_deal_brewery_id_path(brewery.id) %>
+               
+            </li>
+        </ul>
+       
+    <% end %>
+
 </div>
