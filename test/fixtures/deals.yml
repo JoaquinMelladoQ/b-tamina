@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal_date: 2021-01-07
+  deal_quantity: 1
+  confirmation: false
+  brewery: one
+  client: one
+
+two:
+  deal_date: 2021-01-07
+  deal_quantity: 1
+  confirmation: false
+  brewery: two
+  client: two
