@@ -1,6 +1,15 @@
 <%clients= clients_by_distance(@clients,current_brewery) %>
 <div class="container">
+
+ 
     <h1>Mis Clientes</h1>
+    <%= link_to "Registrar producción de bagazo", new_bagass_path %>
+    <% bagasse= Bagasse.where(brewery_id: current_brewery.id).pluck(:quantity)%>
+    <% deals=Deal.where(brewery_id: current_brewery.id).pluck(:deal_quantity) %>
+    <% total_bagasse= bagasse.inject(0) { |sum, b| sum + b } %>
+    <% total_deals= deals.inject(0) { |sum, b| sum + b } %>
+    <% bagasse_stock= total_bagasse-total_deals%>
+    <p class="card-text">Bagazo disponible: <%= bagasse_stock%></p>
 
     <% clients.each do |c| %>
     <div class="card">

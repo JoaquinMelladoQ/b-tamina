@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Bagasses#new</h1>
+    <h1>Registra tu bagazo</h1>
 
     <%= form_with(model: @bagasse ,url: bagasses_path,local: true) do |f| %>
         
@@ -13,7 +13,7 @@
             <%= f.date_field :production_date%>
         </div>   
 
-        <div class="actions">
+        <div class="actions my-2">
             <%= f.submit "Crear registro" %>
         </div>
     <% end %>
