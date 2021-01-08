@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_01_08_023011) do
   create_table "deals", force: :cascade do |t|
     t.date "deal_date"
     t.integer "deal_quantity"
-    t.boolean "confirmation"
+    t.boolean "confirmation", default: false
     t.integer "brewery_id"
     t.integer "client_id"
     t.datetime "created_at", null: false
