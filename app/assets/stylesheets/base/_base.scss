@@ -17,11 +17,12 @@ html, body {
 .para_graph {
     font-size: 30px;
     font-weight: bold;
-    justify-content: right;
+    justify-content: center;
     align-items: flex-end;
     text-align: right;
-    padding: 5%;
-    padding-top: 10%;
+    padding-right: 50px;
+    // padding: 5%;
+    // padding-top: 10%;
     text-shadow: 0.125em 0.120em 0.125em black;
 }
 p {
