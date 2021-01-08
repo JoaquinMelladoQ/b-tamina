@@ -1,18 +1,20 @@
-<h1>Bagasses#new</h1>
+<div class="container">
+    <h1>Bagasses#new</h1>
 
-<%= form_with(model: @bagasse ,url: bagasses_path,local: true) do |f| %>
-    
-    <div class="field">
-        <%= f.label "Cantidad de bagazo (Kg)" %><br />
-        <%= f.number_field :quantity%>
-    </div>  
-    
-    <div class="field">
-        <%= f.label "Fecha de producción" %><br />
-        <%= f.date_field :production_date%>
-    </div>   
+    <%= form_with(model: @bagasse ,url: bagasses_path,local: true) do |f| %>
+        
+        <div class="field">
+            <%= f.label "Cantidad de bagazo (Kg)" %><br />
+            <%= f.number_field :quantity%>
+        </div>  
+        
+        <div class="field">
+            <%= f.label "Fecha de producción" %><br />
+            <%= f.date_field :production_date%>
+        </div>   
 
-    <div class="actions">
-        <%= f.submit "Crear registro" %>
-    </div>
-<% end %>
+        <div class="actions">
+            <%= f.submit "Crear registro" %>
+        </div>
+    <% end %>
+</div>
