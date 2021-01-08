@@ -7,13 +7,13 @@
         <ul>
             <li>
                 <%= brewery.name %>
-                <%= link_to "New Deal", new_deal_brewery_id_path(brewery.id) %>
-               
+                    <%= link_to "New Deal" , new_deal_brewery_id_path(brewery.id) %>
+
             </li>
         </ul>
-       
-    <% end %>
 
-    <%=   order_by_distance(@breweries, current_client) %>
+        <% end %>
+
+
 
 </div>
