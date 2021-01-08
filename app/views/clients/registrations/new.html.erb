@@ -1,18 +1,43 @@
     
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>Regístrate</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "clients/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.label :Nombre  %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
+        <%= f.email_field :email, autocomplete: "email", class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :Teléfono %><br />
+        <%= f.telephone_field :phone, autocomplete: "telephone", class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :Dirección %><br />
+        <%= f.text_field :address, autocomplete: "address", class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :region %><br />
+        <%= f.select :region, [	"Región de Arica y Parinacota",	"Región de Tarapacá",	"Región de Antofagasta.",	"Región de Atacama.",	"Región de Coquimbo",	"Región de Valparaíso",	"Región Metropolitana de Santiago.",	"Región del Libertador General Bernardo O’Higgins.",	"Región del Maule.",	"Región del Ñuble",	"Región del Biobío.",	"Región de La Araucanía.",	"Región de Los Ríos.",	"Región de Los Lagos.",	"Región de Aysén del General Carlos Ibáñez del Campo.",	"Región de Magallanes y la Antártica Chilena."	]%>
+    </div>
+
+      <div class="field">
+        <%= f.label :movility, 'Radio de movilidad (km)' %><br />
+        <%= f.number_field :movility, placeholder: 'Please specify the distance range of your transport vehicle', autocomplete: "address", class:"form-control" %> <span>km</span>
+      </div>
+
+      <div class="field">
+        <%= f.label :capacity, 'Capacidad de transporte (kg)' %><br />
+        <%= f.number_field :capacity, placeholder: 'Please specify the maximum weight that your transport vehicle can carry.', autocomplete: "address", class:"form-control" %> <span>kg</span>
       </div>
 
       <div class="field">
@@ -20,47 +45,18 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :phone %><br />
-        <%= f.text_field :phone, autocomplete: "telephone" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :address %><br />
-        <%= f.text_field :address, autocomplete: "address" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :region %><br />
-        <%= f.text_field :region, autocomplete: "address" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :movility, 'Vehicle Movility' %><br />
-        <%= f.text_field :movility, placeholder: 'Please specify the distance range of your transport vehicle', autocomplete: "address" %> <span>km</span>
-      </div>
-
-      <div class="field">
-        <%= f.label :capacity, 'Vehicle Capacity' %><br />
-        <%= f.text_field :capacity, placeholder: 'Please specify the maximum weight that your transport vehicle can carry.', autocomplete: "address" %> <span>kg</span>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
       </div>
 
       <%= f.hidden_field :seller, value: false %>
 
-
-
-
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
+      <div class="actions ">
+        <%= f.submit "Registrar", class:"btn btn-light my-3" %>
       </div>
     <% end %>
 

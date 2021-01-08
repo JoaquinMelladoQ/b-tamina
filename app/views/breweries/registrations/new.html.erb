@@ -6,22 +6,22 @@
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :Nombre %><br />
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class:"form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :Teléfono %><br />
-      <%= f.telephone_field :phone%>
+      <%= f.telephone_field :phone, class:"form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :Dirección %><br />
-      <%= f.text_field :address%>
+      <%= f.text_field :address, class:"form-control" %>
     </div>
 
     <div class="field">
@@ -30,8 +30,8 @@
     </div>
 
     <div class="field">
-      <%= f.label "Capacidad de producción mensual de Bagazo" %><br />
-      <%= f.number_field :capacity%>
+      <%= f.label "Capacidad de producción mensual de Bagazo (kg)" %><br />
+      <%= f.number_field :capacity, class:"form-control" %>
     </div>
 
     <div class="field">
@@ -44,16 +44,16 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Registrar", class:"btn btn-light my-3" %>
     </div>
   <% end %>
 
