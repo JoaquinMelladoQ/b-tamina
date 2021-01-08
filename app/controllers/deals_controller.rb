@@ -11,6 +11,7 @@ class DealsController < ApplicationController
   end
 
   def show 
+    @client = Client.find(id: params[:id])
     @deals = Deal.where(client_id: params[:id])
   end
 
