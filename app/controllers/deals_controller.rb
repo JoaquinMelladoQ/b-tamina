@@ -25,7 +25,7 @@ class DealsController < ApplicationController
       @deal.save!
       redirect_to brewerie_index_path
     else 
-      redirect_to 'new_deal_path'
+      redirect_to new_deal_brewery_id_path(x)
     end
   end 
 
