@@ -1,11 +1,12 @@
 class DealsController < ApplicationController
+  before_action :authenticate_brewery!, only: [:index]
   def new
     @deal = Deal.new
     @brewery=Brewery.find(params[:brewery_id])
   end
 
   def index
-    brewery_ref = Brewery.find(id: current_brewery.id)
+    brewery_ref = Brewery.find(current_brewery.id)
     @deals = Deal.where(brewery_id: brewery_ref)
   end
 
