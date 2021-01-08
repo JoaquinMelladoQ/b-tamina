@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'deals/create/:brewery_id', to: 'deals#create', as:'create_deal_brewery_id' 
   root 'home#index'
 
+  get 'client/:id', to: "clients#show", as: 'show_client'
   
   resources :deals 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

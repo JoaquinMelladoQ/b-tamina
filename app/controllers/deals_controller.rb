@@ -10,11 +10,6 @@ class DealsController < ApplicationController
     @deals = Deal.where(brewery_id: brewery_ref)
   end
 
-  def show 
-    @client = Client.find(id: params[:id])
-    @deals = Deal.where(client_id: params[:id])
-  end
-
   def create
     x=params[:brewery_id]
     bagasse = Bagasse.where(brewery_id: x)
