@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :yeasts, only: [:new, :create, :show]
   resources :bagasses, only: [:new, :create, :show]
   devise_for :breweries, controllers: { registrations: 'breweries/registrations' }
   devise_for :clients, controllers: { registrations: 'clients/registrations'}
