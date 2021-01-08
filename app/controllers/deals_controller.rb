@@ -1,7 +1,13 @@
 class DealsController < ApplicationController
+  before_action :authenticate_brewery!, only: [:index]
   def new
     @deal = Deal.new
     @brewery=Brewery.find(params[:brewery_id])
+  end
+
+  def index
+    brewery_ref = Brewery.find(current_brewery.id)
+    @deals = Deal.where(brewery_id: brewery_ref)
   end
 
   def create
@@ -19,7 +25,7 @@ class DealsController < ApplicationController
       @deal.save!
       redirect_to brewerie_index_path
     else 
-      redirect_to 'new_deal_path'
+      redirect_to new_deal_brewery_id_path(x)
     end
   end 
 
