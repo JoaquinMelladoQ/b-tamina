@@ -1,7 +1,9 @@
-<h2>Deals with <%= @client.name %></h2>
+<div class="container">
+    <h2>Deals with <%= @client.name %></h2>
 
-<% @deals.each do |d| %>
-    <%= d.deal_quantity %>
-    <%= d.deal_date %>
-    <%= d.confirmation %>
-<% end %>
+    <% @deals.each do |d| %>
+        <%= d.deal_quantity %>
+        <%= d.deal_date %>
+        <%= d.confirmation %>
+    <% end %>
+</div>
