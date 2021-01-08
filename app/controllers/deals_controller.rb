@@ -1,5 +1,4 @@
 class DealsController < ApplicationController
-  before_action :index, authenticate_brewery!
   def new
     @deal = Deal.new
     @brewery=Brewery.find(params[:brewery_id])
@@ -7,7 +6,7 @@ class DealsController < ApplicationController
 
   def index
     brewery_ref = Brewery.find(id: current_brewery.id)
-    @deals = Deal.where(brewery_id: brewery_ref.id)
+    @deals = Deal.where(brewery_id: brewery_ref)
   end
 
   def create
