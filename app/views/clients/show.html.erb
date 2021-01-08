@@ -2,12 +2,19 @@
 <div class="container mt-5">
   <h2>Check your deals with <%= @client.name %></h2>
   <% @deals.each do |d| %>
-  <div class="card">
+  <div class="card my-3">
       <div class="card-body">
         <h5 class="card-title">Quantity: <%= d.deal_quantity %></h5>
         <p class="card-titlet">Deal date: <%= d.deal_date %>.</p>
-      </div>
-    </div>
+        <% if d.confirmation %>
+        <p class="card-text">Estado de la solicitud: Confirmada </p>
+        <% else %>
+        <p class="card-text">Estado de la solicitud: Pendiente </p>
+        <%= link_to "Confirmar retiro", edit_deal_path(d.id), class:"btn btn-primary" %>
+      <% end %>
+      </div> 
+  </div>
+ 
 
 
   <% end %>

@@ -1,23 +1,12 @@
-<div class="home mt-5">
-        <p class="para_graph">
-          En B-tamina buscamos generar un mercado para la utilización de los residuos cerveceros, actuando como facilitador en la conexión entre cerveceros e industrias.
-        </p>
-    <div class="row">
-        <div class="card">
-             <div class="card-body">
-                <h2>¿Eres Productor de Cerveza?</h2>
-                <p class="card-text">Incribete aca abajo</p>
-                <%= link_to "Inicia Sesión", new_brewery_session_path  %>
-                <%= link_to "Regístrate", new_brewery_registration_path %>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h2>¿Eres Comprador de Bagazo?</h2>
-                <p class="card-text">Incribete aca abajo</p>
-                <%= link_to "Inicia Sesión", new_client_session_path %>
-                <%= link_to "Regístrate", new_client_registration_path%>
-            </div>
-        </div>
-    </div>
-</div>
+<% if current_brewery!=nil %>
+<script type="text/javascript">
+    window.location.href="/clients/index"  // put your correct path in a string here
+  </script>
+    
+<% elsif current_client!=nil %>
+<script type="text/javascript">
+    window.location.href="/breweries/index"  // put your correct path in a string here
+  </script>
+<% else %>    
+<%= render 'unlogged_view' %>
+<% end %>

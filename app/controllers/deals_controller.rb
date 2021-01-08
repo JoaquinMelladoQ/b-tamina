@@ -15,14 +15,14 @@ class DealsController < ApplicationController
     bagasse = Bagasse.where(brewery_id: x)
     quantities=bagasse.pluck(:quantity)
 
-    deals= Deal.where(brewey_id: x)
+    deals= Deal.where(brewery_id: x)
     deal_quantities=deals.pluck(:deal_quantity)
     
     total_bagasse= quantities.inject(0) { |sum, b| sum + b } 
     total_deals= deal_quantities.inject(0) { |sum, b| sum + b } 
     @total =total_bagasse-total_deals
     
-    if deal_params[:deal_quantity].to_i < @total 
+    if deal_params[:deal_quantity].to_i <= @total 
       @deal = Deal.create(deal_params)
       @deal.client_id=current_client.id
       @deal.brewery_id=x

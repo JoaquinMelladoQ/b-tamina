@@ -1,13 +1,25 @@
 <div class="container">
     <h1>Cervecerías</h1>
+
     <% @breweries.each do |brewery| %>
-        <ul>
-            <li>
-                <%= brewery.name %>
-                    <%= link_to "New Deal" , new_deal_brewery_id_path(brewery.id) %>
+        
+        <div class="card my-3">
+            <div class="card-header">
+                <h5 class="card-title"><%= brewery.name %></h5>
+              </div>
+            <div class="card-body">
+                
+                <p class="card-text">Dirección: <%= brewery.address %></p>
+                <p class="card-text">Teléfono: <%= brewery.phone %></p>
+                <% bagasse= Bagasse.where(brewery_id: brewery.id).pluck(:quantity)%>
+                <% deals=Deal.where(brewery_id: brewery.id).pluck(:deal_quantity) %>
+                <% total_bagasse= bagasse.inject(0) { |sum, b| sum + b } %>
+                <% total_deals= deals.inject(0) { |sum, b| sum + b } %>
+                <% bagasse_stock= total_bagasse-total_deals%>
+                <p class="card-text">Bagazo disponible: <%= bagasse_stock%></p>
+                <%= link_to "New Deal" , new_deal_brewery_id_path(brewery.id) %>
+            </div>
+        </div>
+    <% end %>
 
-            </li>
-        </ul>
-
-        <% end %>
 </div>
