@@ -3,6 +3,10 @@ class BagassesController < ApplicationController
     @bagasse=Bagasse.new
   end
 
+  def show
+    @bagasse = Bagasse.where(bewery_id: current_brewery.id)
+  end
+
   def create
     @bagasse=Bagasse.new(quantity: bagasse_params[:quantity], production_date: bagasse_params[:production_date], brewery_id: current_brewery.id)
     if @bagasse.save

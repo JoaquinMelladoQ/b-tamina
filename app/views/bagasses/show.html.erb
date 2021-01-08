@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Revisa tus registros de bagazo</h2>
+
+    <% @bagasse.each do |b| %>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Fecha de Producción: <%= b.production_date %></h5>
+          <p class="card-title">Cantidad Producida: <%= b.quantity %>.</p>
+        </div>
+      </div>
+    <% end %>
+</div>

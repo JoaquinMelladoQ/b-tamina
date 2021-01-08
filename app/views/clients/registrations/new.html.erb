@@ -1,13 +1,22 @@
     
   <div class="container">
+<<<<<<< HEAD
     <h2>Regístrate</h2>
+=======
+    <h2>¡Regístrate con nosotros!</h2>
+>>>>>>> d61be3c95ad82dcc92b939985e1517f8191e8088
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "clients/shared/error_messages", resource: resource %>
 
       <div class="field">
+<<<<<<< HEAD
         <%= f.label :Nombre  %><br />
         <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control" %>
+=======
+        <%= f.label :name, 'Nombre' %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+>>>>>>> d61be3c95ad82dcc92b939985e1517f8191e8088
       </div>
 
       <div class="field">
@@ -26,6 +35,7 @@
       </div>
 
       <div class="field">
+<<<<<<< HEAD
         <%= f.label :region %><br />
         <%= f.select :region, [	"Región de Arica y Parinacota",	"Región de Tarapacá",	"Región de Antofagasta.",	"Región de Atacama.",	"Región de Coquimbo",	"Región de Valparaíso",	"Región Metropolitana de Santiago.",	"Región del Libertador General Bernardo O’Higgins.",	"Región del Maule.",	"Región del Ñuble",	"Región del Biobío.",	"Región de La Araucanía.",	"Región de Los Ríos.",	"Región de Los Lagos.",	"Región de Aysén del General Carlos Ibáñez del Campo.",	"Región de Magallanes y la Antártica Chilena."	]%>
     </div>
@@ -51,12 +61,45 @@
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
+=======
+        <%= f.label :phone, 'Teléfono' %><br />
+        <%= f.text_field :phone, autocomplete: "telephone" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :address, 'Dirección' %><br />
+        <%= f.text_field :address, autocomplete: "address" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :region, 'Región' %><br />
+        <%= f.text_field :region, autocomplete: "region" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :movility, 'Movilidad' %><br />
+        <%= f.text_field :movility, placeholder: 'Por favor indica el alcance máximo de tu vehículo de transporte.', autocomplete: "address" %> <span>km</span>
+      </div>
+
+      <div class="field">
+        <%= f.label :capacity, 'Capacidad de Carga' %><br />
+        <%= f.text_field :capacity, placeholder: 'Por favor indica la capacidad máxima de carga de tu vehículo de transporte.', autocomplete: "address" %> <span>kg</span>
+>>>>>>> d61be3c95ad82dcc92b939985e1517f8191e8088
       </div>
 
       <%= f.hidden_field :seller, value: false %>
 
+<<<<<<< HEAD
       <div class="actions ">
         <%= f.submit "Registrar", class:"btn btn-light my-3" %>
+=======
+
+
+
+
+      <div class="actions">
+        <%= f.submit "Regístrate" %>
+>>>>>>> d61be3c95ad82dcc92b939985e1517f8191e8088
       </div>
     <% end %>
 
