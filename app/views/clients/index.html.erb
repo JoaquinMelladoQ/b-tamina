@@ -1,7 +1,8 @@
+<%clients= clients_by_distance(@clients,current_brewery) %>
 <div class="container">
     <h1>Mis Clientes</h1>
 
-    <% @clients.each do |c| %>
+    <% clients.each do |c| %>
     <div class="card">
         <div class="card-header">
           <%= link_to "#{c.name}", show_client_path(c.id) %> 
@@ -9,6 +10,7 @@
         <div class="card-body">
           <h5>Email: <%= c.email %></h5>
           <h5>Dirección: <%= c.address %></h5>
+          <h5>Región: <%= c.region %></h5>
           <h5 class="card-title">Número de solicitudes: <%= c.deals.count %></h5>
         </div>
       </div>

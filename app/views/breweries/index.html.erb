@@ -1,8 +1,8 @@
-
+<%breweries= breweries_by_distance(@breweries,current_client) %>
 <div class="container">
     <h1>Cervecerías</h1>
 
-    <% @breweries.each  do |brewery,value| %>
+    <% breweries.each  do |brewery,value| %>
         
         <div class="card my-3">
             <div class="card-header">
@@ -11,6 +11,7 @@
             <div class="card-body">
                 
                 <p class="card-text">Dirección: <%= brewery.address %></p>
+                <p class="card-text">Region: <%= brewery.region %></p>
                 <p class="card-text">Teléfono: <%= brewery.phone %></p>
                 <% bagasse= Bagasse.where(brewery_id: brewery.id).pluck(:quantity)%>
                 <% deals=Deal.where(brewery_id: brewery.id).pluck(:deal_quantity) %>
@@ -23,6 +24,6 @@
         </div>
     <% end %>
 
-    <%= order_by_distance(@breweries,current_client) %>
+    
    
 </div>
