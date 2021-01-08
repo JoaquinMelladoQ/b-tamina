@@ -1,7 +1,8 @@
+
 <div class="container">
     <h1>Cervecerías</h1>
 
-    <% @breweries.each do |brewery| %>
+    <% @breweries.each  do |brewery,value| %>
         
         <div class="card my-3">
             <div class="card-header">
@@ -22,4 +23,6 @@
         </div>
     <% end %>
 
+    <%= order_by_distance(@breweries,current_client) %>
+   
 </div>
