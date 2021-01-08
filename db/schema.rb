@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_133637) do
+ActiveRecord::Schema.define(version: 2021_01_08_023011) do
 
   create_table "bagasses", force: :cascade do |t|
     t.integer "quantity"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_133637) do
     t.boolean "seller"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "region"
     t.index ["email"], name: "index_breweries_on_email", unique: true
     t.index ["reset_password_token"], name: "index_breweries_on_reset_password_token", unique: true
   end
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_133637) do
     t.boolean "seller"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "region"
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
@@ -59,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_133637) do
   create_table "deals", force: :cascade do |t|
     t.date "deal_date"
     t.integer "deal_quantity"
-    t.boolean "confirmation"
+    t.boolean "confirmation", default: false
     t.integer "brewery_id"
     t.integer "client_id"
     t.datetime "created_at", null: false
