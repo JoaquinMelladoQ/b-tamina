@@ -11,6 +11,13 @@
     margin-top: 120px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 .card {
     background-color: rgb(52, 48, 48);
 }
