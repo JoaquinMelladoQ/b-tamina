@@ -3,6 +3,7 @@
 
     <h1>Bienvenido <%= current_brewery.name %></h1>
     <h2>Mira los compradores de bagazo cerca de ti</h2>
+    <%= link_to "Registrar producción de levadura",new_yeast_path %>
     <%= link_to "Registrar producción de bagazo", new_bagass_path %>
     <% bagasse= Bagasse.where(brewery_id: current_brewery.id).pluck(:quantity)%>
     <% deals=Deal.where(brewery_id: current_brewery.id).pluck(:deal_quantity) %>

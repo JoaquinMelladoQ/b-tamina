@@ -9,7 +9,7 @@ class YeastsController < ApplicationController
   
     def create
       @yeast=Yeast.new(quantity: yeast_params[:quantity], production_date: yeast_params[:production_date], brewery_id: current_brewery.id, strain: yeast_params[:strain])
-      if @bagasse.save
+      if @yeast.save
           redirect_to root_path, notice: 'Register was successfully created.'
       else
           flash.now[:alert] = 'Register cannot be created.'
