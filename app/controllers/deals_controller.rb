@@ -34,6 +34,13 @@ class DealsController < ApplicationController
     end
   end 
 
+  def edit
+      @deal=Deal.find(params[:id])
+      @deal.confirmation=true
+      @deal.save
+      redirect_to deals_path, notice: 'Retiro confirmado.'
+  end
+
   protected
 
   def deal_params
