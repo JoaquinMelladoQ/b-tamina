@@ -1,3 +1,21 @@
 <h2>Check your deals</h2>
+<div class="container">
+<% @deals.each do |deal| %>
 
-<%= @deals %>
+<div class="card">
+    <div class="card-header">
+      <%= deal.deal_date %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= deal.client.name %></h5>
+      <p class="card-text">Ha solicitado retirar <%= deal.deal_quantity %> Kg. de bagazo</p>
+      <% if deal.confirmation %>
+      <p class="card-text">Estado de la solicitud: Confirmada </p>
+      <% else %>
+      <p class="card-text">Estado de la solicitud: Pendiente </p>
+      <%= link_to "Confirmar retiro", edit_deal_path(deal.id), class:"btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
