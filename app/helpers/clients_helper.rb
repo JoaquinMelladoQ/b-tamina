@@ -18,10 +18,11 @@ module ClientsHelper
     #                     [	15	,	14	,	13	,	12	,	11	,	10	,	9	,	8	,	7	,	6	,	5	,	4	,	3	,	2	,	1	,	0	]]
     #     distance_to_current_client={}
     #     breweries.each do |brewery|
-    #         distance_to_current_client[brewery.id]= distance_matrix[current_client.region_id,brewery.region_id]
+    #         debugger
+    #         distance_to_current_client[brewery.id]= distance_matrix[current_client.region,brewery.region]
     #     end
 
-    #     distance_to_current_client.order[distance: :asc)
+    # distance_to_current_client.sort_by {|k,v| v}.reverse
         
     # end
 
