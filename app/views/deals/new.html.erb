@@ -4,19 +4,11 @@
 
     <h2>Make your deal!</h2>
 
-<<<<<<< HEAD
 <%= form_with(model: @deal, url: create_deal_brewery_id_path(@brewery.id),local: true) do |ff| %>
     <div class="field">
         <%= ff.label :deal_quantity, 'Enter Amount to Withdraw' %><br />
         <%= ff.text_field :deal_quantity, autofocus: true %>
     </div>
-=======
-    <%= form_with(model: @deal, local: true) do |ff| %>
-        <div class="field">
-            <%= ff.label :deal_quantity, 'Enter Amount to Withdraw' %><br />
-            <%= ff.text_field :deal_quantity, autofocus: true %>
-        </div>
->>>>>>> 5cb17f0d377b756fd06748bba241832529782dd0
 
         <div class="field">
             <%= ff.label :deal_date, 'Enter Date of Withdrawal' %><br />
