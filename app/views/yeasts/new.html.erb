@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Registra tu levadura</h1>
+
+    <%= form_with(model: @yeast ,url: bagasses_path,local: true) do |f| %>
+        
+        <div class="field">
+            <%= f.label "Cantidad de levadura (Kg)" %><br />
+            <%= f.number_field :quantity%>
+        </div>  
+        
+        <div class="field">
+            <%= f.label "Fecha de producción" %><br />
+            <%= f.date_field :production_date%>
+        </div>   
+
+        <div class="field">
+            <%= f.label "Cepa" %><br />
+            <%= f.text_field :strain%>
+        </div>   
+
+        <div class="actions my-2">
+            <%= f.submit "Crear registro" %>
+        </div>
+    <% end %>
+</div>

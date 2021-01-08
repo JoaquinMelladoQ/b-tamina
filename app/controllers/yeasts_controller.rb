@@ -8,7 +8,7 @@ class YeastsController < ApplicationController
     end
   
     def create
-      @yeast=Yeast.new(quantity: yeast_params[:quantity], production_date: yeast_params[:production_date], brewery_id: current_brewery.id)
+      @yeast=Yeast.new(quantity: yeast_params[:quantity], production_date: yeast_params[:production_date], brewery_id: current_brewery.id, strain: yeast_params[:strain])
       if @bagasse.save
           redirect_to root_path, notice: 'Register was successfully created.'
       else
@@ -18,8 +18,8 @@ class YeastsController < ApplicationController
     end
   
     private
-      def bagasse_params
-        params.require(:yeast).permit(:quantity, :production_date)
+      def yeast_params
+        params.require(:yeast).permit(:quantity, :production_date, :strain)
       end
   
   end
