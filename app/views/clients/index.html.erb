@@ -4,8 +4,16 @@
     <h1>Para el Cervecero</h1>
 
     <% @clients.each do |c| %>
-        <%= c.name %>
-        <%= link_to "#{c.deals.count}", deal_path(c.id) %>
+    <div class="card">
+        <div class="card-header">
+          <%= link_to "#{c.name}", show_client_path(c.id) %> 
+        </div>
+        <div class="card-body">
+          <h5>Email: <%= c.email %></h5>
+          <h5>Address: <%= c.address %></h5>
+          <h5 class="card-title">Number of Deals: <%= c.deals.count %></h5>
+        </div>
+      </div>
     <% end %> 
 
 </div>
