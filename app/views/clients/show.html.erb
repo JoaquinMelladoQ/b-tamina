@@ -1,11 +1,11 @@
 
 <div class="container mt-5">
-  <h2>Check your deals with <%= @client.name %></h2>
+  <h2>Mira las solicitudes hechas por <%= @client.name %></h2>
   <% @deals.each do |d| %>
   <div class="card my-3">
       <div class="card-body">
-        <h5 class="card-title">Quantity: <%= d.deal_quantity %></h5>
-        <p class="card-titlet">Deal date: <%= d.deal_date %>.</p>
+        <h5 class="card-title">Cantidad de Bagazo: <%= d.deal_quantity %></h5>
+        <p class="card-titlet">Fecha de retiro: <%= d.deal_date %>.</p>
         <% if d.confirmation %>
         <p class="card-text">Estado de la solicitud: Confirmada </p>
         <% else %>
@@ -14,9 +14,6 @@
       <% end %>
       </div> 
   </div>
- 
-
-
   <% end %>
 </div>
 
