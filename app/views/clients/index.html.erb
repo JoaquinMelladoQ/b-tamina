@@ -1,8 +1,8 @@
 <%clients= clients_by_distance(@clients,current_brewery) %>
 <div class="container">
 
- 
-    <h1>Mis Clientes</h1>
+    <h1>Bienvenido <%= current_brewery.name %></h1>
+    <h2>Mira los compradores de bagazo cerca de ti</h2>
     <%= link_to "Registrar producción de bagazo", new_bagass_path %>
     <% bagasse= Bagasse.where(brewery_id: current_brewery.id).pluck(:quantity)%>
     <% deals=Deal.where(brewery_id: current_brewery.id).pluck(:deal_quantity) %>
@@ -12,7 +12,7 @@
     <p class="card-text">Bagazo disponible: <%= bagasse_stock%></p>
 
     <% clients.each do |c| %>
-    <div class="card">
+    <div class="card my-3">
         <div class="card-header">
           <%= link_to "#{c.name}", show_client_path(c.id) %> 
         </div>

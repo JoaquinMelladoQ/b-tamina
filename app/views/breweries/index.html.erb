@@ -1,6 +1,7 @@
 <%breweries= breweries_by_distance(@breweries,current_client) %>
 <div class="container">
-    <h1>Cervecerías</h1>
+    <h1>Bienvenido <%= current_client.name %></h1>
+    <h2>Mira las cervecerías cerca de ti</h2>
 
     <% breweries.each  do |brewery,value| %>
         
